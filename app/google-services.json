@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "782999594343",
+    "project_id": "flatmessanger",
+    "storage_bucket": "flatmessanger.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:782999594343:android:be6374353aad1c90b1fbc2",
+        "android_client_info": {
+          "package_name": "com.flat.internal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "782999594343-7aiu06qv2nap4mtvgmol11d8f7qajfb7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2GGYr9Z9TlG2vt4oqG2bQqh3D53_zzqU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "782999594343-7aiu06qv2nap4mtvgmol11d8f7qajfb7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
