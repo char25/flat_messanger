@@ -4,13 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".SplashActivity">
 
-    <TextView
+    <LinearLayout
         android:gravity="center"
-        android:text="Splash"
-        android:textSize="40sp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></TextView>
+        android:layout_height="match_parent">
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/Logo"
+            android:layout_width="200sp"
+            android:layout_height="200sp"
+            android:background="@color/white"
+            android:src="@drawable/app_icon"
+            app:shapeAppearance="@style/RoundImage"/>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
