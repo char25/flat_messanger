@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.RelativeLayout
 import android.widget.TextView
 
 /**
@@ -20,7 +21,7 @@ class VerificationFragment : BaseFragment(R.layout.fragment_verification) {
         val VerifyTextView : TextView = view.findViewById(R.id.VerifyTextView)
         VerifyTextView.setText(getString(R.string.code_has_sended) + " " + AuthFragment.AuthSingleTon!!.PhoneNum)
 
-        view.findViewById<Button>(R.id.VerifyPhoneNumber).setOnClickListener {
+        view.findViewById<RelativeLayout>(R.id.VerifyPhoneNumber).setOnClickListener {
             val VerificationCodeEditText : EditText = view.findViewById(R.id.VerificationCodeEditText)
             AuthFragment.AuthSingleTon!!.VerifyPhoneNumber(VerificationCodeEditText.text.toString())
         }

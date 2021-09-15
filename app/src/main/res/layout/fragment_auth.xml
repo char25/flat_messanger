@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fragment_background"
     tools:context=".AuthFragment">
 
     <LinearLayout
@@ -12,21 +13,45 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <EditText
-            android:text="+380111111111"
-            android:id="@+id/PhoneNumberEditText"
-            android:hint="Phone number"
-            android:inputType="phone"
-            android:layout_marginHorizontal="30sp"
-            android:layout_width="match_parent"
-            android:layout_height="50sp"></EditText>
 
-        <Button
-            android:id="@+id/LoginWithPhone"
-            android:text="Login"
-            android:layout_marginHorizontal="30sp"
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_margin="20sp"
+            android:background="@drawable/white_border_with_shadow"
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="50sp"></Button>
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:text="+380111111111"
+                android:id="@+id/PhoneNumberEditText"
+                android:hint="Phone number"
+                android:inputType="phone"
+                android:layout_marginTop="30sp"
+                android:layout_marginBottom="20sp"
+                android:layout_marginHorizontal="30sp"
+                android:layout_width="match_parent"
+                android:layout_height="50sp"></EditText>
+
+            <RelativeLayout
+                android:id="@+id/LoginWithPhone"
+                android:layout_marginBottom="30sp"
+                android:layout_marginHorizontal="30sp"
+                android:background="@drawable/gradient_border"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:text="Login in"
+                    android:layout_width="match_parent"
+                    android:layout_height="60sp"></TextView>
+            </RelativeLayout>
+        </LinearLayout>
+
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

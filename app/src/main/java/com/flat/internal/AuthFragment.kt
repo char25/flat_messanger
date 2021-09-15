@@ -6,6 +6,7 @@ import android.view.View
 
 import android.widget.Button
 import android.widget.EditText
+import android.widget.RelativeLayout
 import androidx.navigation.fragment.NavHostFragment
 import com.flat.internal.models.Auth
 
@@ -24,7 +25,7 @@ class AuthFragment : BaseFragment(R.layout.fragment_auth) {
 
         val PhoneNumberEditText : EditText = view.findViewById(R.id.PhoneNumberEditText);
 
-        view.findViewById<Button>(R.id.LoginWithPhone).setOnClickListener {
+        view.findViewById<RelativeLayout>(R.id.LoginWithPhone).setOnClickListener {
             AuthSingleTon = Auth(PhoneNumberEditText.text.toString())
             AuthSingleTon!!.bindPhoneBuiilder()
         }
