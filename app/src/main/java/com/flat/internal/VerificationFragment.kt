@@ -18,11 +18,12 @@ class VerificationFragment : BaseFragment(R.layout.fragment_verification) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val VerificationCodeEditText : EditText = view.findViewById(R.id.VerificationCodeEditText)
         val VerifyTextView : TextView = view.findViewById(R.id.VerifyTextView)
         VerifyTextView.setText(getString(R.string.code_has_sended) + " " + AuthFragment.AuthSingleTon!!.PhoneNum)
 
         view.findViewById<RelativeLayout>(R.id.VerifyPhoneNumber).setOnClickListener {
-            val VerificationCodeEditText : EditText = view.findViewById(R.id.VerificationCodeEditText)
+
             AuthFragment.AuthSingleTon!!.VerifyPhoneNumber(VerificationCodeEditText.text.toString())
         }
     }

@@ -1,5 +1,6 @@
 package com.flat.internal
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -7,6 +8,8 @@ import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.view.inputmethod.InputMethodManager
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import com.flat.internal.models.Auth
@@ -23,6 +26,13 @@ class MainActivity : AppCompatActivity() {
 
         fun ExecuteActionFragment(fragInt : Int) {
             navHostFragment!!.navController.navigate(fragInt)
+        }
+
+        fun openSoftKeyboard(context: Context, view: View) {
+            view.requestFocus()
+            // open the soft keyboard
+            val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.showSoftInput(view, InputMethodManager.SHOW_IMPLICIT)
         }
     }
 
@@ -43,4 +53,5 @@ class MainActivity : AppCompatActivity() {
         val myRef = database.getReference("Users")
         myRef.setValue("Hello, World!")*/
     }
+
 }

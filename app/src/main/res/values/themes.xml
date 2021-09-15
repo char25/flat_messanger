@@ -24,7 +24,7 @@
     <style name="Theme.Flat.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
     <style name="RoundImage">
 
-        <item name="cornerSize">20%</item>
+        <item name="cornerSize">30%</item>
     </style>
 
 </resources>

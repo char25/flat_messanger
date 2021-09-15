@@ -15,6 +15,6 @@
     </style>
     <style name="RoundImage">
 
-        <item name="cornerSize">20%</item>
+        <item name="cornerSize">30%</item>
     </style>
 </resources>
