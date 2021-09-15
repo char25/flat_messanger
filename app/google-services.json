@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "782999594343",
+    "firebase_url": "https://flatmessanger-default-rtdb.europe-west1.firebasedatabase.app",
     "project_id": "flatmessanger",
     "storage_bucket": "flatmessanger.appspot.com"
   },
@@ -13,6 +14,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "782999594343-sim1td3osut1qiehpm6ojbbc55q6d4h4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.flat.internal",
+            "certificate_hash": "474ab723e6dbd498a62ca968d090e0c7cfc7fde5"
+          }
+        },
         {
           "client_id": "782999594343-7aiu06qv2nap4mtvgmol11d8f7qajfb7.apps.googleusercontent.com",
           "client_type": 3

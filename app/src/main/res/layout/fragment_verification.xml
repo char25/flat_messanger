@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VerificationFragment">
+
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/VerifyTextView"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:text="We sent verification code to your phone number"
+            android:layout_marginHorizontal="30sp"
+            android:layout_width="match_parent"
+            android:layout_height="50sp"></TextView>
+
+        <EditText
+            android:maxLength="6"
+            android:id="@+id/VerificationCodeEditText"
+            android:hint="verification code"
+            android:inputType="number"
+            android:layout_marginHorizontal="30sp"
+            android:layout_width="match_parent"
+            android:layout_height="50sp"></EditText>
+
+        <Button
+            android:id="@+id/VerifyPhoneNumber"
+            android:text="Verify"
+            android:layout_marginHorizontal="30sp"
+            android:layout_width="match_parent"
+            android:layout_height="50sp"></Button>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,26 +3,42 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/MainFragment">
 
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.flat.internal.FirstFragment"
+        android:id="@+id/AuthFragment"
+        android:name="com.flat.internal.AuthFragment"
         android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
+        tools:layout="@layout/fragment_auth">
 
-        <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.flat.internal.SecondFragment"
+        android:id="@+id/VerificationFragment"
+        android:name="com.flat.internal.VerificationFragment"
         android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
+        tools:layout="@layout/fragment_verification">
 
-        <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+
     </fragment>
+
+    <fragment
+        android:id="@+id/MainFragment"
+        android:name="com.flat.internal.MainFragment"
+        android:label="Main Fragment"
+        tools:layout="@layout/fragment_main">
+
+
+    </fragment>
+    <action
+        android:id="@+id/Act_GoTo_VerificationFragment"
+        app:destination="@id/VerificationFragment" />
+    <action
+        android:id="@+id/Act_GoTo_MainFragment"
+        app:destination="@id/MainFragment" />
+
+    <action
+        android:id="@+id/Act_GoTo_AuthFragment"
+        app:destination="@id/AuthFragment" />
+
 </navigation>
