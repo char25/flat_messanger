@@ -3,15 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/AuthFragment">
+    app:startDestination="@id/LoadingFragment">
 
     <fragment
         android:id="@+id/AuthFragment"
         android:name="com.flat.internal.fragments.AuthFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_auth">
-
-
     </fragment>
     <fragment
         android:id="@+id/VerificationFragment"
@@ -27,9 +25,28 @@
         android:name="com.flat.internal.fragments.MainFragment"
         android:label="Main Fragment"
         tools:layout="@layout/fragment_main">
-
-
     </fragment>
+
+    <fragment
+        android:id="@+id/RegisterFragment"
+        android:name="com.flat.internal.fragments.RegisterFragment"
+        android:label="RegisterFragment"
+        tools:layout="@layout/fragment_register">
+    </fragment>
+
+    <fragment
+        android:id="@+id/LoadingFragment"
+        android:name="com.flat.internal.fragments.LoadingFragment"
+        android:label="LoadingFragment"
+        tools:layout="@layout/fragment_loading">
+    </fragment>
+
+    <action
+        android:id="@+id/Act_GoTo_LoadingFragment"
+        app:destination="@id/LoadingFragment" />
+    <action
+        android:id="@+id/Act_GoTo_RegisterFragment"
+        app:destination="@id/RegisterFragment" />
     <action
         android:id="@+id/Act_GoTo_VerificationFragment"
         app:destination="@id/VerificationFragment" />

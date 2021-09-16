@@ -3,13 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.MainFragment">
 
-    <include layout="@layout/appbar"></include>
+    tools:context=".fragments.LoadingFragment">
 
-    <LinearLayout
-        android:layout_marginTop="80sp"
-        android:background="@drawable/white_border_cor_up"
+    <RelativeLayout
+        android:gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></LinearLayout>
+        android:layout_height="match_parent">
+        <ProgressBar
+            android:layout_width="60sp"
+            android:layout_height="60sp"></ProgressBar>
+    </RelativeLayout>
+
 </FrameLayout>

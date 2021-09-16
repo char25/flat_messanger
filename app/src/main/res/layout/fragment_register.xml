@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.RegisterFragment">
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_margin="20sp"
+        android:background="@drawable/white_border_with_shadow"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_marginTop="30sp"
+            android:src="@drawable/register"
+            android:layout_width="120sp"
+            android:layout_height="120sp"></ImageView>
+
+        <TextView
+            android:layout_marginTop="30sp"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:text="This first your sign in, write your first and last names."
+            android:layout_marginHorizontal="30sp"
+            android:layout_width="match_parent"
+            android:layout_height="50sp"></TextView>
+
+        <EditText
+            android:id="@+id/FirstNameEditText"
+            android:hint="First name"
+            android:inputType="text"
+            android:layout_marginTop="30sp"
+            android:layout_marginBottom="20sp"
+            android:layout_marginHorizontal="30sp"
+            android:layout_width="match_parent"
+            android:layout_height="50sp"></EditText>
+
+        <EditText
+            android:id="@+id/LastNameEditText"
+            android:hint="Last name"
+            android:inputType="text"
+            android:layout_marginBottom="30sp"
+            android:layout_marginHorizontal="30sp"
+            android:layout_width="match_parent"
+            android:layout_height="50sp"></EditText>
+
+        <RelativeLayout
+            android:id="@+id/Register"
+            android:layout_marginBottom="30sp"
+            android:layout_marginHorizontal="30sp"
+            android:background="@drawable/gradient_border"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:text="Register"
+                android:layout_width="match_parent"
+                android:layout_height="60sp"></TextView>
+        </RelativeLayout>
+    </LinearLayout>
+
+</FrameLayout>

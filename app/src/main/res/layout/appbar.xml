@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:background="@drawable/fl_gradient_background"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="80sp">
+        <ImageView
+            android:layout_marginHorizontal="20sp"
+            android:src="@drawable/menu2"
+            android:layout_width="35sp"
+            android:layout_height="match_parent"></ImageView>
+        <TextView
+            android:textSize="22sp"
+            android:gravity="left|center"
+            android:text="Flat Messanger"
+            android:textColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></TextView>
+    </LinearLayout>
+
+</RelativeLayout>

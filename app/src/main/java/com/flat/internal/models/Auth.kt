@@ -10,20 +10,20 @@ import com.google.firebase.FirebaseException
 import com.google.firebase.auth.*
 import java.util.concurrent.TimeUnit
 import com.flat.internal.R
+import com.flat.internal.constant.FirebaseConst
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 open class Auth(var PhoneNum : String) {
 
     var TAG = "->Auth";
-    var FbAuth : FirebaseAuth
     var MyVerificationId : String = ""
-
-    init {
-        FbAuth = FirebaseAuth.getInstance()
-    }
 
     fun bindPhoneBuiilder() {
 
-        val options = PhoneAuthOptions.newBuilder(FbAuth)
+        val options = PhoneAuthOptions.newBuilder(FirebaseConst.FbAuth!!)
             .setPhoneNumber(PhoneNum)       // Phone number to verify
             .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit
             .setActivity(MainActivity.SingleTon!!)                 // Activity (for callback binding)
@@ -53,13 +53,13 @@ open class Auth(var PhoneNum : String) {
     }
 
     fun signInWithPhoneAuthCredential(credential: PhoneAuthCredential, activity: Activity) {
-        FbAuth.signInWithCredential(credential)
+        FirebaseConst.FbAuth!!.signInWithCredential(credential)
             .addOnCompleteListener(activity) { task ->
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
                     Log.d(TAG, "signInWithCredential:success")
 
-                    MainActivity.ExecuteActionFragment(R.id.Act_GoTo_MainFragment)
+                    MainActivity.ExecuteActionFragment(R.id.Act_GoTo_LoadingFragment)
 
                     val user = task.result?.user
                 } else {

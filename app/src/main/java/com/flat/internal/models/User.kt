@@ -1,5 +1,5 @@
 package com.flat.internal.models
 
-data class User(val username: String) {
+data class User(val Firstname: String, val Lastname: String, val Username : String) {
 
 }
