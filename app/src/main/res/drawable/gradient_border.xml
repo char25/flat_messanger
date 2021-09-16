@@ -6,7 +6,7 @@
     <item android:state_pressed="true">
         <shape>
             <gradient
-                android:startColor="@color/fl_green"
+                android:startColor="@color/fl_red"
                 android:endColor="@color/fl_blue"
                 android:angle="0" />
             <corners
