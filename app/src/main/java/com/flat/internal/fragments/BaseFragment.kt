@@ -1,13 +1,12 @@
-package com.flat.internal
+package com.flat.internal.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
-import android.widget.Button
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
+import com.flat.internal.R
 
 open class BaseFragment(var ViewId: Int) : Fragment() {
 

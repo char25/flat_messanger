@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/AuthFragment"
-        android:name="com.flat.internal.AuthFragment"
+        android:name="com.flat.internal.fragments.AuthFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_auth">
 
@@ -15,7 +15,7 @@
     </fragment>
     <fragment
         android:id="@+id/VerificationFragment"
-        android:name="com.flat.internal.VerificationFragment"
+        android:name="com.flat.internal.fragments.VerificationFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_verification">
 
@@ -24,7 +24,7 @@
 
     <fragment
         android:id="@+id/MainFragment"
-        android:name="com.flat.internal.MainFragment"
+        android:name="com.flat.internal.fragments.MainFragment"
         android:label="Main Fragment"
         tools:layout="@layout/fragment_main">
 

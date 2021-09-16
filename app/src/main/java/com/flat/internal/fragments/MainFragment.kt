@@ -1,9 +1,8 @@
-package com.flat.internal
+package com.flat.internal.fragments
 
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import androidx.navigation.fragment.findNavController
+import com.flat.internal.R
 
 class MainFragment : BaseFragment(R.layout.fragment_main) {
 

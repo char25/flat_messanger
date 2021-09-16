@@ -49,9 +49,9 @@ class MainActivity : AppCompatActivity() {
             ExecuteActionFragment(R.id.Act_GoTo_AuthFragment)
         }
         //ExecuteActionFragment(R.id.Act_GoTo_SplashFragment)
-        /*val database = FirebaseDatabase.getInstance()
+        val database = FirebaseDatabase.getInstance()
         val myRef = database.getReference("Users")
-        myRef.setValue("Hello, World!")*/
+        myRef.setValue("Hello, World!")
     }
 
 }
