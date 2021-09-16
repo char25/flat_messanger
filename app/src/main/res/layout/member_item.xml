@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginLeft="20sp"
+    android:layout_marginRight="20sp"
+    android:layout_marginTop="20sp"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:color="?colorControlHighlight">
+
+    <LinearLayout
+
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.google.android.material.imageview.ShapeableImageView
+
+            android:layout_width="70sp"
+            android:layout_height="70sp"
+            android:background="@color/white"
+            android:src="@drawable/app_icon"
+            app:shapeAppearance="@style/CircleImage"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:paddingTop="8sp"
+                android:textColor="@color/black"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:paddingLeft="20sp"
+                android:paddingRight="20sp"
+                android:gravity="center|left"
+                android:text="Arina Piterskay"
+                android:textSize="19sp"
+                android:maxLength="30"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></TextView>
+            <TextView
+                android:paddingTop="5sp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:paddingLeft="20sp"
+                android:paddingRight="20sp"
+                android:id="@+id/MemberNameTextView"
+                android:gravity="center|left"
+                android:text="ItemItemItemItemItemItemItemItemItemItemItem"
+                android:textSize="15sp"
+                android:maxLength="30"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></TextView>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_marginTop="5sp"
+        android:layout_marginLeft="90sp"
+        android:background="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="0.5sp"></View>
+
+</LinearLayout>

@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="80sp">
         <ImageView
+            android:id="@+id/AppHdrLeftButtonImg"
             android:layout_marginHorizontal="20sp"
             android:src="@drawable/menu2"
             android:layout_width="35sp"

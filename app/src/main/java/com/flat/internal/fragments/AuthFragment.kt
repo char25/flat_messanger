@@ -22,7 +22,7 @@ import java.util.concurrent.TimeUnit
 class AuthFragment : BaseFragment(R.layout.fragment_auth) {
 
     var TAG = "AuthFragment";
-    var VerificationId : String = ""
+
     var PhoneNum : String = ""
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -52,11 +52,10 @@ class AuthFragment : BaseFragment(R.layout.fragment_auth) {
             verificationId: String,
             token: PhoneAuthProvider.ForceResendingToken
         ) {
-            VerificationId = verificationId
 
             var Args = Bundle()
             Args.putString("PhoneNum", PhoneNum)
-            Args.putString("VerificationId", VerificationId)
+            Args.putString("VerificationId", verificationId)
 
             ExecuteActionFragment(R.id.Act_GoTo_VerificationFragment, Args)
         }
