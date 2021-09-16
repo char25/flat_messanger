@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <ProgressBar
+            android:indeterminateTint="@color/fl_green"
             android:layout_width="60sp"
             android:layout_height="60sp"></ProgressBar>
     </RelativeLayout>
