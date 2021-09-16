@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.animation.AnimationUtils
-import com.flat.internal.constant.FirebaseConst
+import com.flat.internal.constant.FbSing
 import com.google.android.material.imageview.ShapeableImageView
 
 class SplashActivity : AppCompatActivity() {
@@ -14,7 +14,7 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
-        FirebaseConst()
+        FbSing()
 
         var Logo : ShapeableImageView = findViewById(R.id.Logo);
         Logo.startAnimation(AnimationUtils.loadAnimation(this, R.anim.logo))
