@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.flat.internal.R
@@ -27,6 +29,15 @@ open class BaseFragment(var ViewId: Int) : Fragment() {
         FragmentView = view
 
         view.startAnimation(AnimationUtils.loadAnimation(context, R.anim.fragment_anim))
+    }
+
+    fun AppBarInit(view: View, IconId : Int, onClickListener: View.OnClickListener, AppBarText : String) {
+        val AppHdrLeftButtonImg = view.findViewById<ImageView>(R.id.AppHdrLeftButtonImg)
+        val AppBarTextView = view.findViewById<TextView>(R.id.AppBarTextView)
+
+        AppHdrLeftButtonImg.setImageResource(IconId)
+        AppHdrLeftButtonImg.setOnClickListener(onClickListener)
+        AppBarTextView.setText(AppBarText)
     }
 
     fun ExecuteActionFragment(ActionId : Int, Args: Bundle) {

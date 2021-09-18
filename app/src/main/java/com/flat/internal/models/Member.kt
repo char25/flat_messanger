@@ -1,5 +1,7 @@
 package com.flat.internal.models
 
-data class Member(var Name : String) {
+import java.io.Serializable
+
+data class Member(var Name : String) : Serializable{
 
 }

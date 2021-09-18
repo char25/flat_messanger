@@ -16,6 +16,7 @@
             android:layout_width="35sp"
             android:layout_height="match_parent"></ImageView>
         <TextView
+            android:id="@+id/AppBarTextView"
             android:textSize="22sp"
             android:gravity="left|center"
             android:text="Flat Messanger"

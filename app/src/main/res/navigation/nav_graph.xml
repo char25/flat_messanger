@@ -41,6 +41,13 @@
         tools:layout="@layout/fragment_loading">
     </fragment>
 
+    <fragment
+        android:id="@+id/ChatFragment"
+        android:name="com.flat.internal.fragments.ChatFragment"
+        android:label="ChatFragment"
+        tools:layout="@layout/fragment_chat">
+    </fragment>
+
     <action
         android:id="@+id/Act_GoTo_LoadingFragment"
         app:destination="@id/LoadingFragment" />
@@ -57,5 +64,9 @@
     <action
         android:id="@+id/Act_GoTo_AuthFragment"
         app:destination="@id/AuthFragment" />
+
+    <action
+        android:id="@+id/Act_GoTo_ChatFragment"
+        app:destination="@id/ChatFragment" />
 
 </navigation>

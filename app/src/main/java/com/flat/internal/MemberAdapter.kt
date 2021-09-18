@@ -1,5 +1,7 @@
 package com.flat.internal
 
+import android.content.Intent
+import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -7,11 +9,17 @@ import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.flat.internal.fragments.BaseFragment
 import com.flat.internal.models.Member
 
-class MemberAdapter : RecyclerView.Adapter<MemberAdapter.Holder>() {
+class MemberAdapter(FragBase : BaseFragment) : RecyclerView.Adapter<MemberAdapter.Holder>() {
 
     var ArrayItems = ArrayList<Member>()
+    var BaesFragRef : BaseFragment? = null
+
+    init {
+        this.BaesFragRef = FragBase
+    }
 
     class Holder(ItemView : View) : RecyclerView.ViewHolder(ItemView) {
 
@@ -33,8 +41,16 @@ class MemberAdapter : RecyclerView.Adapter<MemberAdapter.Holder>() {
     override fun onBindViewHolder(holder: Holder, position: Int) {
         holder.Update(ArrayItems[position])
 
+        /*
+            After clicking by item, in bundle args setting 'Member' object by index from array
+            then changing 'MainFragment' on 'ChatFragment' with 'Member' model.
+        */
         holder.view.setOnClickListener(View.OnClickListener {
-            Log.d("Adapter", position.toString())
+
+            var Args = Bundle()
+            Args.putSerializable("MemberObj", ArrayItems[position])
+
+            BaesFragRef!!.ExecuteActionFragment(R.id.Act_GoTo_ChatFragment, Args)
         })
     }
 

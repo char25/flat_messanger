@@ -25,7 +25,13 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
         super.onViewCreated(view, savedInstanceState)
 
         var MemberRecyclerView = view.findViewById<RecyclerView>(R.id.MemberRecyclerView)
-        var MemAdapter = MemberAdapter()
+
+        /*
+            Creation MemberAdapter with 'BaseFragment' args
+            BaseFragment reference using for start next 'ChatFragment'
+            and using 'Member' model in chat fragment after click by item.
+        */
+        var MemAdapter = MemberAdapter(this)
 
         MemberRecyclerView.layoutManager = LinearLayoutManager(view.context)
         MemberRecyclerView.adapter = MemAdapter
