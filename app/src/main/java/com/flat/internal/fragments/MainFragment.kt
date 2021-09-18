@@ -10,6 +10,7 @@ import com.flat.internal.MainActivity
 import com.flat.internal.MemberAdapter
 import com.flat.internal.R
 import com.flat.internal.models.Member
+import com.flat.internal.models.Message
 import com.flat.internal.models.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
@@ -36,12 +37,16 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
         MemberRecyclerView.layoutManager = LinearLayoutManager(view.context)
         MemberRecyclerView.adapter = MemAdapter
 
+        var msgs = ArrayList<Message>()
+        msgs.add(Message(true, "Hello world niggases!!!"))
+        msgs.add(Message(false, "Hi"))
+
         view.findViewById<ImageView>(R.id.AppHdrLeftButtonImg).setOnClickListener(View.OnClickListener {
-            MemAdapter.AddItem(Member("Vasya shadow 2000"))
+            MemAdapter.AddItem(Member("Vasya shadow 2000", msgs))
         })
 
         for (i in 0..15) {
-            MemAdapter.AddItem(Member("Vasya shadow MAXORXX $i"))
+            MemAdapter.AddItem(Member("Vasya shadow MAXORXX $i", msgs))
         }
 
         /*view.findViewById<Button>(R.id.VerifyPhoneNumber).setOnClickListener {

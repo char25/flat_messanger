@@ -13,11 +13,11 @@
             android:id="@+id/AppHdrLeftButtonImg"
             android:layout_marginHorizontal="20sp"
             android:src="@drawable/menu2"
-            android:layout_width="35sp"
+            android:layout_width="30sp"
             android:layout_height="match_parent"></ImageView>
         <TextView
             android:id="@+id/AppBarTextView"
-            android:textSize="22sp"
+            android:textSize="20sp"
             android:gravity="left|center"
             android:text="Flat Messanger"
             android:textColor="@color/white"

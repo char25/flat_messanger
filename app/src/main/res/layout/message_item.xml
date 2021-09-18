@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+
+    android:id="@+id/MessageContainer"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/member_item_riple">
+    <LinearLayout
+        android:background="@drawable/message_border"
+        android:layout_margin="10sp"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/MessageTextView"
+            android:maxWidth="220sp"
+            android:textSize="15sp"
+            android:textColor="@color/white"
+            android:layout_marginHorizontal="15sp"
+            android:layout_marginTop="15sp"
+            android:text="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></TextView>
+        <TextView
+            android:minWidth="20sp"
+            android:layout_marginHorizontal="15sp"
+            android:layout_marginBottom="15sp"
+            android:maxWidth="120sp"
+            android:textSize="13sp"
+            android:textColor="@color/white"
+            android:text="15:40"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></TextView>
+    </LinearLayout>
+</LinearLayout>
