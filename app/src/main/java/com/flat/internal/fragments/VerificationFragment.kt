@@ -42,6 +42,7 @@ class VerificationFragment : BaseFragment(R.layout.fragment_verification) {
                 }
                 else {
                     Log.w(TAG, "signInWithCredential:failure", task.exception)
+                    ShowFragmentDialog("You write incorrect verification code, check your inbox messages, and find correct code!")
                 }
             }
     }

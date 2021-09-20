@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.RelativeLayout
+import androidx.fragment.app.FragmentManager
 import com.flat.internal.R
 import com.flat.internal.constant.Fb
 import com.flat.internal.constant.FbSing
@@ -48,14 +49,14 @@ class CreateChatFragment : BaseFragment(R.layout.fragment_create_chat) {
                                         ExecuteActionFragment(R.id.Act_GoTo_MainFragment)
                                     }
                                     else {
-                                        Log.d(TAG, "This member exist in your profile!")
+                                        ShowFragmentDialog("This member exist in your profile, write another number.")
                                     }
                                 }
                                 override fun onCancelled(databaseError: DatabaseError) { Log.d(TAG, databaseError.toString()) }
                             })
                     }
                     else {
-                        Log.d(TAG, "User not exist!")
+                        ShowFragmentDialog("User with this phone number not exist.")
                     }
 
                 }

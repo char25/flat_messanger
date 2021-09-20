@@ -47,4 +47,8 @@ open class BaseFragment(var ViewId: Int) : Fragment() {
     fun ExecuteActionFragment(ActionId : Int) {
         FragmentView!!.findNavController().navigate(ActionId)
     }
+
+    fun ShowFragmentDialog(text : String) {
+        MyDialogFragment(text).show(fragmentManager!!, "dialog")
+    }
 }

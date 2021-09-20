@@ -46,7 +46,10 @@ class AuthFragment : BaseFragment(R.layout.fragment_auth) {
     open var callbacks = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
 
         override fun onVerificationCompleted(credential: PhoneAuthCredential) {}
-        override fun onVerificationFailed(e: FirebaseException) { Log.w(TAG, "onVerificationFailed", e) }
+        override fun onVerificationFailed(e: FirebaseException) {
+            Log.w(TAG, "onVerificationFailed", e)
+            ShowFragmentDialog("An error has occurred, write correct phone number, and try again!")
+        }
 
         override fun onCodeSent(
             verificationId: String,
