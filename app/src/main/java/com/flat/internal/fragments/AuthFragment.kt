@@ -32,14 +32,22 @@ class AuthFragment : BaseFragment(R.layout.fragment_auth) {
 
         view.findViewById<RelativeLayout>(R.id.LoginWithPhone).setOnClickListener {
             PhoneNum = PhoneNumberEditText.text.toString()
+            if (PhoneNum.isEmpty()) {
+                ShowFragmentDialog("Input 'Phone number' is empty!")
+            }
+            else if (PhoneNum.length < 5) {
+                ShowFragmentDialog("You entered incorrect phone number!")
+            }
+            else {
 
-            val options = PhoneAuthOptions.newBuilder(FbSing.Instance().FbAuth!!)
-                .setPhoneNumber(PhoneNum)       // Phone number to verify
-                .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit
-                .setActivity(MainActivity.Ref!!)                 // Activity (for callback binding)
-                .setCallbacks(callbacks)          // OnVerificationStateChangedCallbacks
-                .build()
-            PhoneAuthProvider.verifyPhoneNumber(options)
+                val options = PhoneAuthOptions.newBuilder(FbSing.Instance().FbAuth!!)
+                    .setPhoneNumber(PhoneNum)       // Phone number to verify
+                    .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit
+                    .setActivity(MainActivity.Ref!!)                 // Activity (for callback binding)
+                    .setCallbacks(callbacks)          // OnVerificationStateChangedCallbacks
+                    .build()
+                PhoneAuthProvider.verifyPhoneNumber(options)
+            }
         }
     }
 

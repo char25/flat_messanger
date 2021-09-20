@@ -28,7 +28,16 @@ class VerificationFragment : BaseFragment(R.layout.fragment_verification) {
         VerifyTextView.setText(getString(R.string.code_has_sended) + " " + PhoneNum)
 
         view.findViewById<RelativeLayout>(R.id.VerifyPhoneNumber).setOnClickListener {
-            VerifyPhoneNumber(VerificationId, VerificationCodeEditText.text.toString())
+
+            if (VerificationCodeEditText.text.isEmpty()) {
+                ShowFragmentDialog("Input 'verification code' is empty!")
+            }
+            else if (VerificationCodeEditText.text.length < 6) {
+                ShowFragmentDialog("code format is minimum 6 laters. Write correct verify code and try again!")
+            }
+            else {
+                VerifyPhoneNumber(VerificationId, VerificationCodeEditText.text.toString())
+            }
         }
     }
 

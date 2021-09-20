@@ -20,15 +20,25 @@ class RegisterFragment : BaseFragment(R.layout.fragment_register) {
         val LastNameEditText : EditText = view.findViewById(R.id.LastNameEditText)
 
         view.findViewById<RelativeLayout>(R.id.Register).setOnClickListener {
-            val UserRef = FbSing.Instance().FbDb!!.getReference("Users/" + FbSing.Instance().MyPhoneNum + "/User")
 
-            UserRef.setValue(User(
-                FirstNameEditText.text.toString(),
-                LastNameEditText.text.toString(),
-                FbSing.Instance().FbAuth!!.currentUser!!.phoneNumber.toString()
-            ))
+            if (FirstNameEditText.text.isEmpty()) {
+                ShowFragmentDialog("Input 'First name' is empty!")
+            }
+            else if (LastNameEditText.text.isEmpty()) {
+                ShowFragmentDialog("Input 'Last name' is empty!")
+            }
+            else {
+                val UserRef = FbSing.Instance().FbDb!!.getReference("Users/" + FbSing.Instance().MyPhoneNum + "/User")
+                UserRef.setValue(
+                    User(
+                        FirstNameEditText.text.toString(),
+                        LastNameEditText.text.toString(),
+                        FbSing.Instance().FbAuth!!.currentUser!!.phoneNumber.toString()
+                    )
+                )
 
-            view.findNavController().navigate(R.id.Act_GoTo_LoadingFragment)
+                view.findNavController().navigate(R.id.Act_GoTo_LoadingFragment)
+            }
         }
     }
 }
