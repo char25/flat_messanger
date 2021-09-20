@@ -29,6 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <TextView
+                android:id="@+id/ChatNameTextView"
                 android:paddingTop="8sp"
                 android:textColor="@color/black"
                 android:ellipsize="end"
@@ -47,9 +48,9 @@
                 android:maxLines="1"
                 android:paddingLeft="10sp"
                 android:paddingRight="10sp"
-                android:id="@+id/MemberNameTextView"
+                android:id="@+id/ChatMessageTextView"
                 android:gravity="center|left"
-                android:text="ItemItemItemItemItemItemItemItemItemItemItem"
+                android:text="..."
                 android:textSize="14sp"
                 android:maxLength="30"
                 android:layout_width="match_parent"

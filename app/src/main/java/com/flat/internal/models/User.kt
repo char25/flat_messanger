@@ -1,5 +1,19 @@
 package com.flat.internal.models
 
-data class User(val Firstname: String, val Lastname: String, val Phonenumber : String) {
 
+
+class User {
+    var Firstname: String? = null
+    var Lastname: String? = null
+    var Phonenumber : String? = null
+
+    constructor(Firstname:String, Lastname:String, Phonenumber:String) {
+        this.Firstname = Firstname
+        this.Lastname = Lastname
+        this.Phonenumber = Phonenumber
+    }
+
+    constructor() {
+
+    }
 }

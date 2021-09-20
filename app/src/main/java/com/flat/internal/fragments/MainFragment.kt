@@ -3,19 +3,14 @@ package com.flat.internal.fragments
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.ImageView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.flat.internal.MainActivity
 import com.flat.internal.MemberAdapter
 import com.flat.internal.R
+import com.flat.internal.constant.FbSing
 import com.flat.internal.models.Member
-import com.flat.internal.models.Message
-import com.flat.internal.models.User
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 
 class MainFragment : BaseFragment(R.layout.fragment_main) {
@@ -37,17 +32,24 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
         MemberRecyclerView.layoutManager = LinearLayoutManager(view.context)
         MemberRecyclerView.adapter = MemAdapter
 
-        var msgs = ArrayList<Message>()
-        msgs.add(Message(true, "Hello world niggases!!!"))
-        msgs.add(Message(false, "Hi"))
+        AppBarInit(view, R.drawable.add, View.OnClickListener {
+            ExecuteActionFragment(R.id.Act_GoTo_CreateChatFragment)
+        }, "Flat")
 
-        view.findViewById<ImageView>(R.id.AppHdrLeftButtonImg).setOnClickListener(View.OnClickListener {
-            MemAdapter.AddItem(Member("Vasya shadow 2000", msgs))
+        FbSing.Instance().FbDb!!
+            .getReference("Users/" + FbSing.Instance().MyPhoneNum + "/Chats")
+            .addValueEventListener(object : ValueEventListener {
+
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                for (User in dataSnapshot.children) {
+
+                    MemAdapter.AddItem(Member(User.key.toString(), User.value.toString()))
+                }
+            }
+            override fun onCancelled(databaseError: DatabaseError) { Log.d(TAG, databaseError.toString()) }
         })
 
-        for (i in 0..15) {
-            MemAdapter.AddItem(Member("Vasya shadow MAXORXX $i", msgs))
-        }
+        //FbService.startService(view.context, "This is service")
 
         /*view.findViewById<Button>(R.id.VerifyPhoneNumber).setOnClickListener {
 

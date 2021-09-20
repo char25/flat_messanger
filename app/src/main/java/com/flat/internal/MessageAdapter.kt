@@ -10,13 +10,16 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.core.view.updateLayoutParams
 import androidx.recyclerview.widget.RecyclerView
+import com.flat.internal.constant.Fb
+import com.flat.internal.constant.FbSing
 import com.flat.internal.fragments.BaseFragment
 import com.flat.internal.models.Member
 import com.flat.internal.models.Message
 
-class MessageAdapter() : RecyclerView.Adapter<MessageAdapter.Holder>() {
+class MessageAdapter : RecyclerView.Adapter<MessageAdapter.Holder>() {
 
     var ArrayItems = ArrayList<Message>()
+
 
 
     class Holder(ItemView : View) : RecyclerView.ViewHolder(ItemView) {
@@ -25,12 +28,14 @@ class MessageAdapter() : RecyclerView.Adapter<MessageAdapter.Holder>() {
 
         fun Update(message : Message) {
 
+            setIsRecyclable(false)
 
-            val MessageTextView = view.findViewById<TextView>(R.id.MessageTextView)
-            MessageTextView.setText(message.message)
+            view.findViewById<TextView>(R.id.MessageTextView).setText(message.message)
 
-            if (!message.isIncoming) {
-                view.findViewById<LinearLayout>(R.id.MessageContainer).gravity = Gravity.RIGHT
+            if (message!!.sender!!.equals(FbSing.Instance().MyPhoneNum)) {
+
+                view.findViewById<LinearLayout>(R.id.Container).gravity = Gravity.RIGHT
+                view.findViewById<LinearLayout>(R.id.MessageContainer).setBackgroundResource(R.drawable.message_border)
             }
         }
     }
@@ -49,13 +54,13 @@ class MessageAdapter() : RecyclerView.Adapter<MessageAdapter.Holder>() {
         return ArrayItems.size
     }
 
-    fun AddItem(Item : Message) {
-        ArrayItems.add(Item)
+    fun SetArray(messages : ArrayList<Message>?) {
+        ArrayItems = messages!!
         notifyDataSetChanged()
     }
 
-    fun SetArray(messages : ArrayList<Message>) {
-        ArrayItems = messages
+    fun AddItem(message: Message) {
+        ArrayItems.add(message)
         notifyDataSetChanged()
     }
 }

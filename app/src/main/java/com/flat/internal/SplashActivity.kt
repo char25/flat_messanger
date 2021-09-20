@@ -14,8 +14,6 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
-        FbSing()
-
         var Logo : ShapeableImageView = findViewById(R.id.Logo);
         Logo.startAnimation(AnimationUtils.loadAnimation(this, R.anim.logo))
 

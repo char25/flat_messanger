@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
 
-    android:id="@+id/MessageContainer"
+    android:id="@+id/Container"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/member_item_riple">
     <LinearLayout
-        android:background="@drawable/message_border"
+        android:id="@+id/MessageContainer"
+        android:background="@drawable/message_border_incoming"
         android:layout_margin="10sp"
         android:orientation="vertical"
         android:layout_width="wrap_content"

@@ -19,10 +19,9 @@ class RegisterFragment : BaseFragment(R.layout.fragment_register) {
         val FirstNameEditText : EditText = view.findViewById(R.id.FirstNameEditText)
         val LastNameEditText : EditText = view.findViewById(R.id.LastNameEditText)
 
-        val UserRef = FbSing.Instance().FbDb!!.getReference("Users/" + FbSing.Instance().FbAuth!!.uid)
-
         view.findViewById<RelativeLayout>(R.id.Register).setOnClickListener {
-            //MainActivity.ExecuteActionFragment(R.id.Act_GoTo_RegisterFragment)
+            val UserRef = FbSing.Instance().FbDb!!.getReference("Users/" + FbSing.Instance().MyPhoneNum + "/User")
+
             UserRef.setValue(User(
                 FirstNameEditText.text.toString(),
                 LastNameEditText.text.toString(),

@@ -14,12 +14,18 @@ class FbSing {
                 this.Singleton = FbSing()
             }
 
+            if (this.Singleton!!.MyPhoneNum == null && this.Singleton!!.FbAuth.uid != null) {
+                this.Singleton!!.MyPhoneNum =
+                    this.Singleton!!.FbAuth.currentUser!!.phoneNumber.toString()
+            }
+
             return Singleton!!
         }
     }
 
     var FbAuth : FirebaseAuth
     var FbDb : FirebaseDatabase
+    var MyPhoneNum : String? = null
 
     init {
         FbAuth = FirebaseAuth.getInstance()

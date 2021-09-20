@@ -6,8 +6,8 @@
     <item android:state_pressed="true">
         <shape>
             <gradient
-                android:startColor="#008bd1"
-                android:endColor="#008bd1"
+                android:startColor="@color/fl_red"
+                android:endColor="@color/fl_blue"
                 android:angle="0" />
             <corners
                 android:bottomRightRadius="20sp"

@@ -1,4 +1,18 @@
 package com.flat.internal.models
 
-data class Message(var isIncoming : Boolean, var message : String) {
+import com.flat.internal.constant.FbSing
+import java.io.Serializable
+
+class Message : Serializable {
+    var sender : String? = null
+    var message : String? = null
+
+    constructor(sender : String?, message : String?) {
+        this.sender = sender
+        this.message = message
+    }
+
+    constructor() {
+
+    }
 }

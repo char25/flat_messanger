@@ -27,8 +27,8 @@ class MemberAdapter(FragBase : BaseFragment) : RecyclerView.Adapter<MemberAdapte
 
         fun Update(member : Member) {
 
-            var MemberNameTextView = view.findViewById<TextView>(R.id.MemberNameTextView)
-            MemberNameTextView.setText(member.Name + " ->{$position}")
+            var MemberNameTextView = view.findViewById<TextView>(R.id.ChatNameTextView)
+            MemberNameTextView.setText(member.Name)
         }
     }
 
@@ -59,6 +59,7 @@ class MemberAdapter(FragBase : BaseFragment) : RecyclerView.Adapter<MemberAdapte
     }
 
     fun AddItem(Item : Member) {
+
         ArrayItems.add(Item)
         notifyDataSetChanged()
     }

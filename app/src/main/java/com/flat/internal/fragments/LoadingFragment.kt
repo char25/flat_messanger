@@ -20,24 +20,25 @@ class LoadingFragment : BaseFragment(R.layout.fragment_loading) {
 
         if (FbSing.Instance().FbAuth!!.uid != null) {
 
-            var UserRef = FbSing.Instance().FbDb!!.getReference("Users/" + FbSing.Instance().FbAuth!!.uid)
-            UserRef.addValueEventListener(object : ValueEventListener {
-                override fun onDataChange(dataSnapshot: DataSnapshot) {
-                    if (!dataSnapshot.exists()) {
+            FbSing.Instance()
+                .FbDb!!
+                .getReference("Users/" + FbSing.Instance().MyPhoneNum + "/User")
+                .addListenerForSingleValueEvent(object : ValueEventListener {
 
-                        ExecuteActionFragment(R.id.Act_GoTo_RegisterFragment)
-                    }
-                    else {
-                        ExecuteActionFragment(R.id.Act_GoTo_MainFragment)
-                    }
-                    UserRef.removeEventListener(this)
-                }
+                    override fun onDataChange(dataSnapshot: DataSnapshot) {
+                        if (!dataSnapshot.exists()) {
 
-                override fun onCancelled(databaseError: DatabaseError) { Log.d(TAG, databaseError.toString()) }
-            })
+                            ExecuteActionFragment(R.id.Act_GoTo_RegisterFragment)
+                        }
+                        else {
+                            ExecuteActionFragment(R.id.Act_GoTo_MainFragment)
+                        }
+                    }
+
+                    override fun onCancelled(databaseError: DatabaseError) { Log.d(TAG, databaseError.toString()) }
+                })
         }
         else {
-
             ExecuteActionFragment(R.id.Act_GoTo_AuthFragment)
         }
     }

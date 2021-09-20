@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.flat.internal.MemberAdapter
 import com.flat.internal.MessageAdapter
 import com.flat.internal.R
+import com.flat.internal.constant.Fb
 import com.flat.internal.constant.FbSing
 import com.flat.internal.models.Member
 import com.flat.internal.models.Message
@@ -22,7 +23,7 @@ import com.google.firebase.database.ValueEventListener
 
 class ChatFragment : BaseFragment(R.layout.fragment_chat) {
 
-    var TAG = "LoadingFragment"
+    var TAG = "ChatFragment"
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -30,23 +31,46 @@ class ChatFragment : BaseFragment(R.layout.fragment_chat) {
         var MemberObj = this.arguments?.get("MemberObj") as Member
 
         val MessageEditText = view.findViewById<EditText>(R.id.MessageEditText)
+        val RecyclerView = view.findViewById<RecyclerView>(R.id.MessageRecyclerView)
+
+        Log.d(TAG, MemberObj.ChatId!!)
+
+        RecyclerView.layoutManager = LinearLayoutManager(view.context).apply {
+            stackFromEnd = true
+        }
+
+        var MsgAdapter = MessageAdapter()
+        RecyclerView.adapter = MsgAdapter
 
         AppBarInit(view, R.drawable.left_arrow, View.OnClickListener {
             fragmentManager!!.popBackStack()
-        }, MemberObj.Name)
+        }, MemberObj.Name!!)
 
         view.findViewById<ImageView>(R.id.SentMessageImageView).setOnClickListener(View.OnClickListener {
-            Log.d(TAG, MessageEditText.text.toString())
+            MemberObj.SendMessage(
+                Message(FbSing.Instance().MyPhoneNum, MessageEditText.text.toString()),
+                MemberObj.ChatId!!
+            )
             MessageEditText.text.clear()
         })
 
-        var MsgAdapter = MessageAdapter()
 
-        val RecyclerView = view.findViewById<RecyclerView>(R.id.MessageRecyclerView)
+        FbSing.Instance().FbDb!!
+            .getReference("Chats/" + MemberObj.ChatId)
+            .addValueEventListener(object : ValueEventListener {
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+                    val Messages = ArrayList<Message>()
 
-        RecyclerView.layoutManager = LinearLayoutManager(view.context)
-        RecyclerView.adapter = MsgAdapter
+                    for (chatMessage in dataSnapshot.children) {
+                        Messages.add(chatMessage.getValue(Message::class.java)!!)
+                    }
+                    RecyclerView.setHasFixedSize(true)
+                    RecyclerView.setItemViewCacheSize(Messages.size)
 
-        MsgAdapter.SetArray(MemberObj.Messages)
+                    MsgAdapter.SetArray(Messages)
+                    RecyclerView.scrollToPosition(MsgAdapter.itemCount - 1)
+                }
+                override fun onCancelled(databaseError: DatabaseError) { Log.d("Member async INIT", databaseError.toString()) }
+            })
     }
 }
