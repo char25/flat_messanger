@@ -31,7 +31,7 @@
                 android:layout_height="50sp"></TextView>
 
             <EditText
-                android:text="+380111111111"
+
                 android:id="@+id/PhoneEditText"
                 android:hint="Phone number"
                 android:inputType="phone"
